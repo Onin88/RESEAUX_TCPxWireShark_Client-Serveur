@@ -1,0 +1,13 @@
+1) Non client3 n'est pas compatible avec server2 car client3 envoi 2 messages distincts,
+alors que server2 n'attend qu'un message, donc server2 ne recoit que le premier message
+de client3. Donc server2 va se contenter de renvoyer ce message car il n'en attend qu'un
+seul et client3 va afficher un calcul de ce genre : res1 + res2 = res1. 
+
+2) Non client2 n'est pas compatible avec server3 car client2 va envoyer qu'un seul message
+à server3 qui lui en attend 2, donc tant que server3 n'aura pas 2 messages reçus, il tournera 
+en boucle et ne renverra donc jamais le résultat au client2.
+
+3) Non client3 n'est pas compatible avec newserver2 car client3 envoi 2 messages distincts
+alors que newserver2 ne fait qu'un appel à really_rcv(), le serveur ne recoit donc que le
+premier message, on le voit si on affiche les octets reçus, seulement les octets du premier 
+message s'affichent. 
